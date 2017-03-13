@@ -87,23 +87,27 @@
     }
 %>
 
-<div class="content">
+<div class="container">
+    <div class="col-md-12">
     <div class="title">
         <h2>Spillet kan spilles</h2><br>
     </div>
 
-    <img src="<%out.println("images/image" + logic.getAntalForkerteBogstaver(connectionId) + ".jpg");%>" alt="hangman image" name="image" class="image">
+    <img src="<%out.println("images/image" + logic.getAntalForkerteBogstaver(connectionId) + ".jpg");%>" width="250px" alt="hangman image" name="image" class="image">
     <div class="guess">
-    <p>Ordet du skal gætte:</p> <% out.println(logic.getSynligtOrd(connectionId)); %>
-    <br>
+    <p>Ordet du skal gætte: <% out.println(logic.getSynligtOrd(connectionId)); %></p>
+        <br />
 
-<form action="game.jsp" name="formGuess" onsubmit="return validateForm()">
-    <input type="hidden" name="id" value=<%out.println(connectionId);%>>
-    <input type="text" name="guess">
-    <input type="submit" value="Gæt">
-</form>
-        <p>Forkerte bogstaver: <% out.println(logic.getBrugteBogstaver(connectionId));%></p>
+<form class="form-inline" action="game.jsp" name="formGuess" onsubmit="return validateForm()">
+    <div class="form-group">
+    <input  type="hidden" name="id" value=<%out.println(connectionId);%>>
+    <input class="form-control" type="text" name="guess">
+    <input class="btn btn-primary" type="submit" value="Gæt">
     </div>
+</form>
+        <p>Brugte bogstaver: <% out.println(logic.getBrugteBogstaver(connectionId));%></p>
+    </div>
+</div>
 </div>
 </body>
 </html>

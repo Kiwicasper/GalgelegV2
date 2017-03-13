@@ -19,10 +19,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script>
         function validateForm() {
-            var guess = document.forms["formGuess"]["guess"].value;
+            var guess = document.forms["formAddWord"]["add"].value;
             //var regex = /(\d+)/g;
             var regex = /[a-zA-ZøæåØÆÅ]+/g;
-            if (guess == "" || guess.length > 1 || !(guess.match(regex))) {
+            if (guess == "" ||  !(guess.match(regex))) {
                 alert("Ugyldigt input");
                 return false;
             }
@@ -32,17 +32,22 @@
 </head>
 <body>
 <%
+
+    String[] words = null;
     if (request.getParameter("delete") != null){
         RestHelper.getInstance().deleteWord(request.getParameter("delete"));
     }
     if (request.getParameter("add") != null){
         RestHelper.getInstance().addWord(request.getParameter("add"));
     }
-
-    String[] words = RestHelper.getInstance().getWords();
+    try {
+        words = RestHelper.getInstance().getWords();
+    }catch (Exception e){
+        e.printStackTrace();
+    }
 %>
 <div class="container">
-    <h1>REST API administration
+    <h1>REST API administration</h1>
     <div class="col-md-6">
         <div class="row">
 <table class="table table-striped">
@@ -51,15 +56,17 @@
         <th></th>
     </thead>
     <tbody>
-    <%for(String s: words)
-        out.println("<tr><td>" + s + "</td><td><a href =\"restWordbank.jsp?delete=" + s+ "\">Slet</a>");
+    <%
+        if (words != null)
+            for(String s: words)
+              out.println("<tr><td>" + s + "</td><td><a href =\"restWordbank.jsp?delete=" + s+ "\">Slet</a>");
     %>
     </tbody>
 </table>
         </div>
         <div class="row">
 
-<form action="restWordbank.jsp" onsubmit="return validateForm()">
+<form name="formAddWord" action="restWordbank.jsp" onsubmit="return validateForm()">
     <div class="form-group">
 
     <label for="add1">Tilføj ord</label>

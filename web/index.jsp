@@ -12,7 +12,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-      <link rel="stylesheet" type="text/css" href="css.css">
+
       <!-- Latest compiled and minified CSS-->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
@@ -21,6 +21,7 @@
 
       <!-- Latest compiled JavaScript-->
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="css.css">
       <title>Hangman</title>
       <script>
           function validateForm() {
@@ -34,26 +35,32 @@
       </script>
   </head>
   <body>
-  <div class="content">
-  <div class="title"> <h1>Indtast brugernavn og kode for at spille <br></h1> </div>
+  <div>
+
+      <div class="form-signin">
+          <div class="form-signin-heading">
+              <h2>Hangman</h2>
+          </div>
       <form name="login" action="game.jsp" onsubmit="return validateForm()">
-          <div class="text">
-              Brugernavn: <br>
-              Kode:
+          <div class="form-group">
+              <label for="nameInput">Brugernavn:</label>
+              <input class="form-control" id="nameInput" type="text" name="username"> <br>
+
+              <label for="passwordInput">Password:</label>
+              <input class="form-control" id="passwordInput" type="password" name="password"><br>
+              <input class="btn btn-primary" type="submit" value="Login">
           </div>
-          <div class="form">
-              <input type="text" name="username"> <br>
-              <input type="password" name="password"><br>
-              <input class="btn btn-default" type="submit" value="Login">
-          </div>
+
       </form>
     <%
         if (request.getParameter("loginfailed") != null)
             if (request.getParameter("loginfailed").equals("true"))
                  out.println("<h3>Forkert brugernavn eller kode");
     %>
-  </div>
 
-  <a href="restWordbank.jsp">wordbank</a>
+
+  <a href="restWordbank.jsp"><span class="glyphicon glyphicon-pencil"> </span> Wordbank adminpanel</a>
+  </div>
+  </div>
   </body>
 </html>

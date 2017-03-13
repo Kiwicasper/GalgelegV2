@@ -1,53 +1,40 @@
 body {
-    margin: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #eee;
 }
 
-.content{
-    width: auto;
-    height: 60%;
-    background-color: antiquewhite;
-    border: solid;
-    border-width: 5px;
+.form-signin {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+    margin-bottom: 10px;
+}
+.form-signin .checkbox {
+    font-weight: normal;
+}
+.form-signin .form-control {
+    position: relative;
+    height: auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
     padding: 10px;
-
+    font-size: 16px;
 }
-.text{
-    width: 100px;
-    height: 100px;
-    position: relative;
-    left: 25%;
-    font-size: larger;
+.form-signin .form-control:focus {
+    z-index: 2;
 }
-
-.form{
-    width:300px;
-    height: 50%;
-    position: relative;
-    left: 35%;
-    top:-100px;
+.form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
 }
-.title{
-    position: relative;
-    left: 25%;
-
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
 }
-
-.image{
-    width: 50%;
-    max-height: 300px;
-    max-width: 300px;
-    position: relative;
-    top:10%;
-    flex: 1;
-    padding: 1em;
-
-}
-
-.guess{
-    width: 40%;
-    position: relative;
-    top: 10%;
-    flex: 2;
-    padding: 1em;
-}
-
