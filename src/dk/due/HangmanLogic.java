@@ -19,6 +19,5 @@ public interface HangmanLogic extends java.rmi.Remote{
     @WebMethod boolean isGameOver(String id);
     @WebMethod boolean isGameWon(String id);
     @WebMethod void logout(String id);
-    @WebMethod void nulstil(String id);
-    @WebMethod String getOrdet(String id);
+
 }
