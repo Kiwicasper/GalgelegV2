@@ -73,7 +73,7 @@
     }
 
     if (request.getParameter("guess") !=null){
-        logic.guessLetter(connectionId, request.getParameter("guess"));
+        logic.guessLetter(connectionId, request.getParameter("guess").toLowerCase());
     }
 
     //Checks to see if game is over
