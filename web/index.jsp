@@ -13,14 +13,14 @@
 <html>
   <head>
       <link rel="stylesheet" type="text/css" href="css.css">
-      <!-- Latest compiled and minified CSS
+      <!-- Latest compiled and minified CSS-->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-      <!-- jQuery library
+      <!-- jQuery library-->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
-      <!-- Latest compiled JavaScript
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+      <!-- Latest compiled JavaScript-->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
       <title>Hangman</title>
       <script>
           function validateForm() {
@@ -44,7 +44,7 @@
           <div class="form">
               <input type="text" name="username"> <br>
               <input type="password" name="password"><br>
-              <input type="submit" value="Login">
+              <input class="btn btn-default" type="submit" value="Login">
           </div>
       </form>
     <%
@@ -53,5 +53,7 @@
                  out.println("<h3>Forkert brugernavn eller kode");
     %>
   </div>
+
+  <a href="restWordbank.jsp">wordbank</a>
   </body>
 </html>

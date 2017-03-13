@@ -14,20 +14,20 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="css.css">
-    <!-- Latest compiled and minified CSS
+    <!-- Latest compiled and minified CSS-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-    <!-- jQuery library
+    <!-- jQuery library-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
-    <!-- Latest compiled JavaScript
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+    <!-- Latest compiled JavaScript-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <title>Hangman the game</title>
     <script>
         function validateForm() {
             var guess = document.forms["formGuess"]["guess"].value;
             //var regex = /(\d+)/g;
-            var regex = /[a-zA-Z]+/g;
+            var regex = /[a-zA-ZøæåØÆÅ]+/g;
             if (guess == "" || guess.length > 1 || !(guess.match(regex))) {
                 alert("Ugyldigt input");
                 return false;
@@ -51,6 +51,7 @@
 
     if(request.getParameter("id") !=null)
         connectionId = request.getParameter("id");
+
     if (request.getParameter("username") !=null && request.getParameter("password")!=null) {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
